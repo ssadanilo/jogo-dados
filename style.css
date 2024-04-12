@@ -1,0 +1,180 @@
+/* Reset de estilos para todos os elementos */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+    border: 0;
+    outline: 0;
+}
+
+/* Estilos gerais para o corpo da página */
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: rgba(221,50,125);
+}
+
+/* Estilos para o contêiner principal */
+.container{
+    display: grid;
+    place-items: center;
+    width: 250px;
+    background: #eee;
+    padding: 50px 0 30px;
+    border-radius: 30px;
+    box-shadow: rgba(0,0,0,0.1);
+}
+
+/* Estilos para o dado do computador */
+#computer-dice {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    transform-style: preserve-3d;
+    transition: 1s ease;
+}
+
+/* Estilos para o contêiner da mensagem */
+.message-container {
+    margin-top: 40px; /* Aumenta a distância entre a mensagem e o conteúdo acima */
+    margin-bottom: 50px; /* Aumenta a distância entre a mensagem e o conteúdo abaixo */
+    color: rgba(221,50,125);
+    font-size: 15px;
+    font-weight: 600;
+}
+
+/* Estilos para o botão de reiniciar */
+#restart-btn {
+    color: white;
+    background-color: rgba(221,50,125);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+/* Estilos para ocultar o botão de reiniciar inicialmente */
+#restart-btn {
+    display: none;
+}
+
+/* Estilos para os dados */
+.dice{
+    position: relative;
+    width: 100px;
+    height: 100px;
+    transform-style: preserve-3d;
+    transition: 1s ease;
+}
+
+/* Animação de rotação dos dados */
+@keyframes rolling{
+    50%{
+        transform: rotateX(455deg) rotateY(455deg);
+    }
+}
+
+/* Estilos para as faces dos dados */
+.face{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border: 5px solid #f6f3f0;
+    border-radius: 20px;
+    background: linear-gradient(145deg, #dddbd8, #fff);
+    transform-style: preserve-3d;
+}
+
+/* Estilos para as faces dos dados (antes da rotação) */
+.face::before{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    background: #f6f3f0;
+    transform: translateZ(-1px);
+}
+
+/* Estilos para os pontos dos dados */
+.face::after{
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 18px;
+    height: 18px;
+    background: #000;
+    border-radius: 50%;
+}
+
+/* Estilos para as faces específicas dos dados */
+.front{
+    transform: translateZ(50px);
+}
+.back{
+    transform: rotateX(180deg) translateZ(50px);
+}
+.top{
+    transform: rotateX(90deg) translateZ(50px);
+}
+.bottom{
+    transform: rotateX(-90deg) translateZ(50px);
+}
+.right{
+    transform: rotateY(90deg) translateZ(50px);
+}
+.left{
+    transform: rotateY(-90deg) translateZ(50px);
+}
+.front::after{
+    width: 30px;
+    height: 30px;
+    background: #000;
+    margin: -15px 0 0 -15px;
+}
+.back::after{
+    margin: -35px 0 0 -30px;
+    box-shadow: 40px 0, 0 25px, 40px 25px, 0 50px, 40px 50px;
+}
+.top::after{
+    margin: -30px 0 0 -30px;
+    box-shadow: 40px 40px;
+}
+.bottom::after{
+    margin: -36px 0 0 -36px;
+    box-shadow: 26px 26px, 52px 52px, 52px 0, 0 52px;
+}
+.right::after{
+    margin: -30px 0 0 -30px;
+    box-shadow: 40px 0, 0 40px, 40px 40px;
+}
+.left::after{
+    margin: -35px 0 0 -35px;
+    box-shadow: 25px 25px, 50px 50px;
+}
+
+/* Estilos para os botões de rolar dados */
+.roll{
+    color: rgba(221,50,125);
+    margin-top: 50px;
+    padding: 6px 12px;
+    border-radius: 3px;
+    font-size: 16px;
+    font-weight: 600;
+    border: 2px solid rgba(221,50,125);
+    cursor: pointer;
+}
+
+/* Estilos para o hover nos botões de rolar dados */
+.roll:hover{
+    color: #fff;
+    background: rgba(221,50,125);
+}
+

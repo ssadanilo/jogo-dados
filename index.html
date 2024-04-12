@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Definindo o conjunto de caracteres e a compatibilidade com o navegador -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Definindo a largura da tela e a escala inicial -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Título da página -->
+    <title>Jogo dos Dados</title>
+    <!-- Importando o arquivo de estilo CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Audio -->
+    <audio id="dice-sound">
+        <source src="dice.mp3" type="audio/mp3">
+    </audio>
+    <audio id="triumphant" src="triumphant.mp3"></audio>
+
+    <!-- Contêiner principal -->
+    <div class="container">
+        <!-- Dado do computador -->
+        <div class="dice" id="computer-dice">
+            <div class="face front"></div>
+            <div class="face back"></div>
+            <div class="face top"></div>
+            <div class="face bottom"></div>
+            <div class="face right"></div>
+            <div class="face left"></div>
+        </div>
+        <div class="message-container">
+            <h2 id="result-message">Acerte esse dado</h2>
+            <button id="restart-btn" style="display: none;" onclick="window.location.reload();">Reiniciar</button>
+        </div>
+        <!-- Dado do jogador -->
+        <div class="dice" id="player-dice">
+            <div class="face front"></div>
+            <div class="face back"></div>
+            <div class="face top"></div>
+            <div class="face bottom"></div>
+            <div class="face right"></div>
+            <div class="face left"></div>
+        </div>
+        <!-- Botão para rolar o dado do jogador -->
+        <button class="roll" id="player-roll">
+            <h2>Role o Seu Dado</h2>
+        </button>
+    </div>
+
+    <!-- Importando o arquivo de script JavaScript -->
+    <script src="dice.js"></script>
+</body>
+</html>
